@@ -12,6 +12,10 @@ import org.springframework.stereotype.Component;
 public class DataInitializer {
     private UserService userService;
     private RoleService roleService;
+    private User superUser;
+    private User usualUser;
+    private Role adminRole;
+    private Role userRole;
 
     public DataInitializer(UserService userService, RoleService roleService) {
         this.userService = userService;
@@ -20,8 +24,10 @@ public class DataInitializer {
 
     @PostConstruct
     public void inject() {
-        Role adminRole = new Role();
-        Role userRole = new Role();
+        adminRole = new Role();
+        userRole = new Role();
+        superUser = new User();
+        usualUser = new User();
 
         adminRole.setRoleName(Role.RoleName.ADMIN);
         userRole.setRoleName(Role.RoleName.USER);
@@ -29,18 +35,15 @@ public class DataInitializer {
         roleService.add(adminRole);
         roleService.add(userRole);
 
-        User superUser = new User();
-        User user = new User();
-
         superUser.setEmail("admin@admin.su");
         superUser.setPassword("qwerty123");
         superUser.setRoles(Set.of(adminRole));
 
-        user.setEmail("user@user.su");
-        user.setPassword("qwerty123");
-        user.setRoles(Set.of(userRole));
+        usualUser.setEmail("user@user.su");
+        usualUser.setPassword("qwerty123");
+        usualUser.setRoles(Set.of(userRole));
 
         userService.add(superUser);
-        userService.add(user);
+        userService.add(usualUser);
     }
 }
