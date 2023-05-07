@@ -30,11 +30,17 @@ public class DataInitializer {
         roleService.add(userRole);
 
         User superUser = new User();
+        User user = new User();
 
         superUser.setEmail("admin@admin.su");
         superUser.setPassword("qwerty123");
         superUser.setRoles(Set.of(adminRole));
 
+        user.setEmail("user@user.su");
+        user.setPassword("qwerty123");
+        user.setRoles(Set.of(userRole));
+
         userService.add(superUser);
+        userService.add(user);
     }
 }
