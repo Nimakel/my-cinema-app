@@ -1,10 +1,10 @@
 package com.cinema.dao.impl;
 
-import java.util.Optional;
 import com.cinema.dao.AbstractDao;
 import com.cinema.dao.UserDao;
 import com.cinema.exception.DataProcessingException;
 import com.cinema.model.User;
+import java.util.Optional;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;

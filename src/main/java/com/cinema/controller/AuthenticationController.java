@@ -1,11 +1,11 @@
 package com.cinema.controller;
 
-import javax.validation.Valid;
 import com.cinema.dto.request.UserRequestDto;
 import com.cinema.dto.response.UserResponseDto;
 import com.cinema.model.User;
 import com.cinema.service.AuthenticationService;
 import com.cinema.service.mapper.ResponseDtoMapper;
+import javax.validation.Valid;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;

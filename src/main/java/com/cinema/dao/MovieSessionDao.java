@@ -1,9 +1,9 @@
 package com.cinema.dao;
 
+import com.cinema.model.MovieSession;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
-import com.cinema.model.MovieSession;
 
 public interface MovieSessionDao {
     MovieSession add(MovieSession movieSession);
