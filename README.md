@@ -1,39 +1,41 @@
 ﻿# Cinema Shop 🎫
-This project is imitation a cinema shop service. Project works on Spring, REST API and Hibernate.
+This project is imitation a cinema shop service. Project works on Spring, REST API and Hibernate. User can create a basket, add tickets, and view their own order history, while administrator can manage cinema halls, movie sessions, movies, and search user by email. 
 # Features
-* Register or login as a user
-* Make order as a user and add it to shopping cart
-* Manage your shopping cart as a user
-* Add and delete movie as a admin
-* Add and delete movie session as a admin
-* Add and delete cinema hall as a admin
-* Add movie to movie session as a admin
-* Add cinema hall to movie session as a admin
+* Register, authentication and authorization
+* Make order and add it to shopping cart
+* Manage your shopping cart
+* Add and delete movie
+* Add and delete movie session
+* Add and delete cinema hall
+* Add movie to movie session
+* Add cinema hall to movie session
 * Check available movie session for a certain period of time
-* Find user by email as a admin
-* Authentication
+* Find user by email
 # How to run project
 * Clone this repository
-* Replace the values of the "YOUR URL", "YOUR USERNANE", "YOUR PASSWORD", "YOUR DRIVER" properties with the appropriate values for your database setup
+* Setup JDK
+* Create new connect in DB such as MySQL and setup it
+* Replace the values of the `"YOUR URL"`, `"YOUR USERNANE"`, `"YOUR PASSWORD"`, `"YOUR DRIVER"` properties with the appropriate values for your database setup
 * Build project by using Maven: ▶ *mvn clean package*
+* Configure a servlet container such as Tomcat
 * Deploy WAR file to a servlet container such as Tomcat
 * After deploying the project, navigate to http://localhost:8080 in your browser
 * Use Postman to send GET, POST, PUT, DELETE HTTP methods
-* Login as admin: email - admin@admin.su, password - qwerty123
-* Login as user: email - user@user.su, password - qwerty123
+* Login as admin: email - `admin@admin.su`, password - `qwerty123`
+* Login as user: email - `user@user.su`, password - `qwerty123`
 # Structure
-* config: Application configuration
-* controller: Classes that handle HTTP requests and responses
-* dao: Data Access Object interfaces and their implementations
-* dto: Data Transfer Object models for requests and responses
-* exception: Custom exception
-* lib: Email and Password validators and their annotations
-* model: Entities that represent data in Database
-* security: Custom User Details Service
-* service: Service interfaces and their implementation that perform business logic
-* service.mapper: Mappers that convert request DRO to Entity and Entity to response DTO
-* util: Date and Time patterns
-* resources: Contains Database properties
+* `config`: Application configuration
+* `controller`: Classes that handle HTTP requests and responses
+* `dao`: Data Access Object interfaces and their implementations
+* `dto`: Data Transfer Object models for requests and responses
+* `exception`: Custom exception
+* `lib`: Email and Password validators and their annotations
+* `model`: Entities that represent data in Database
+* `security`: Custom User Details Service
+* `service`: Service interfaces and their implementation that perform business logic
+* `service.mapper`: Mappers that convert request DRO to Entity and Entity to response DTO
+* `util`: Date and Time patterns
+* `resources`: Contains Database properties
 # Database Structure  
 ![structure](https://user-images.githubusercontent.com/111348563/236689864-a4809864-0d39-489a-8743-75a110af334d.png)
 # Endpoints and available HTTP methods
@@ -51,6 +53,9 @@ This project is imitation a cinema shop service. Project works on Spring, REST A
 * POST: http://localhost:8080/movies - Create a Movie
 * POST: http://localhost:8080/movie-sessions - Create a Movie Session
 * POST: http://localhost:8080/cinema-halls - Create a Cinema Hall
+* GET: http://localhost:8080/cinema-halls - Get all Movie Sessions
+* GET: http://localhost:8080/movies - All movies
+* DELETE: http://localhost:8080/movie-sessions/{id} - Delete Movie Session by ID
 # Used Technologies
 * Java `v.17`
 * Maven `v.4.0.0`
